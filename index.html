@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Miasma</title>
+    </head>
+    <body>
+        <header>Miasma</header>
+        <div id="controlPanel">
+            <h1>Control Panel</h1>
+            <button class="topButtons" id="controls">Controls</button>
+            <button class="topButtons" id="cards">Cards</button>
+            <button class="topButtons" id="colors">Colors</button>
+            <button class="topButtons" id="draw">Draw</button>
+            <button class="topButtons" id="storm">Storm</button>
+            <button class="topButtons" id="launch">Launch</button>
+            <div id="cardHolder"></div>
+            <span id="healthInfo">Health: 100</span>
+            <span id="energyInfo">Energy: 100</span>
+            <div class="bar" id="health"></div>
+            <div class="bar" id="energy"></div>
+            <div id="repository"></div>
+            <div id="hexagon1">
+                <div class="top"></div>
+                <div class="middle">0</div>
+                <div class="bottom"></div>
+            </div>
+            <div id="hexagon2">
+                <div class="top"></div>
+                <div class="middle">0</div>
+                <div class="bottom"></div>
+            </div>
+            <div id="hexagon3">
+                <div class="top"></div>
+                <div class="middle">0</div>
+                <div class="bottom"></div>
+            </div>
+            <div id="hexagon4">
+                <div class="top"></div>
+                <div class="middle">0</div>
+                <div class="bottom"></div>
+            </div>
+            <div id="hexagon5">
+                <div class="top"></div>
+                <div class="middle">0</div>
+                <div class="bottom"></div>
+            </div>
+            <div id="hexagon6">
+                <div class="top"></div>
+                <div class="middle">0</div>
+                <div class="bottom"></div>
+            </div>
+            <div id="hexagon7">
+                <div class="top"></div>
+                <div class="middle">0</div>
+                <div class="bottom"></div>
+            </div>
+        </div>
+        <div id="arena">
+            <h1>Level One</h1>
+            <h2>Trophies: 0 / 21</h2> 
+            <div id="game"></div>
+        </div>
+        <div class="overlay">
+            <div class="infoPage" id="colorInfo">
+                <h1>Colors</h1>
+            </div>
+            <div class="infoPage" id="cardInfo">
+                <h1>Cards</h1>
+            </div>
+            <div class="infoPage" id="controlInfo">
+                <h1>Controls</h1>
+            </div>
+        </div>
+    </body>
+    <script src="./app.js"></script>
+</html>
