@@ -2,6 +2,31 @@ const PADDING = 0.35;
 const TYPES = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 const ADJACENT = [-1, 0, 1];
 const SPACE = 3;
+const LEVEL0 = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,];
+const LEV1HPDAM = [1.0, 0.2, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV1ENERGY = [1.0, 0.2, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV1PURSUE = 0.99;
+const LEV2HPDAM = [1.0, 0.6, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV2ENERGY = [1.0, 0.23, 0.07, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV2PURSUE = 0.92;
+const LEV3HPDAM = [1.0, 0.9, 0.6, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV3ENERGY = [1.0, 0.26, 0.09, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV3PURSUE = 0.85;
+const LEV4HPDAM = [1.0, 0.95, 0.75, 0.45, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV4ENERGY = [1.0, 0.29, 0.11, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV4PURSUE = 0.78;
+const LEV5HPDAM = [1.0, 0.99, 0.95, 0.75, 0.4, 0.15, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0];
+const LEV5ENERGY = [1.0, 0.32, 0.13, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV5PURSUE = 0.71;
+const LEV6HPDAM = [1.0, 0.999, 0.99, 0.95, 0.75, 0.37, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0];
+const LEV6ENERGY = [1.0, 0.35, 0.15, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV6PURSUE = 0.64;
+const LEV7HPDAM = [1.0, 1.0, 0.999, 0.99, 0.95, 0.6, 0.45, 0.2, 0.12, 0.05, 0.001, 0, 0, 0, 0];
+const LEV7ENERGY = [1.0, 0.38, 0.17, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV7PURSUE = 0.57;
+const HPDAM = [LEVEL0, LEV1HPDAM, LEV2HPDAM, LEV3HPDAM, LEV4HPDAM, LEV5HPDAM, LEV6HPDAM, LEV7HPDAM];
+const ENERGY = [LEVEL0, LEV1ENERGY, LEV2ENERGY, LEV3ENERGY, LEV4ENERGY, LEV5ENERGY, LEV6ENERGY, LEV7ENERGY];
+const PURSUE = [LEVEL0, LEV1PURSUE, LEV2PURSUE, LEV3PURSUE, LEV4PURSUE, LEV5PURSUE, LEV6PURSUE, LEV7PURSUE];
 
 let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 var color_toggle = false;
@@ -31,6 +56,7 @@ var defense_turn = false;
 var resources_warning = false;
 var energy_warning = false;
 var curr_enemy;
+var trophy_timer = 25;
 
 var reds = 0;
 var oranges = 0;
@@ -84,16 +110,18 @@ $("#controls").on("click", function(event) {
 
 $(".overlay").on("click", function(event) {
     event.preventDefault();
-    time_out = false;
     if (color_toggle) {
+        time_out = false;
         $(".overlay").toggle();
         $("#colorInfo").toggle();
         color_toggle = false;
     } else if (card_toggle) {
+        time_out = false;
         $(".overlay").toggle();
         $("#cardInfo").toggle();
         card_toggle = false;
     } else if (control_toggle) {
+        time_out = false;
         $(".overlay").toggle();
         $("#controlInfo").toggle();
         control_toggle = false;
@@ -162,20 +190,10 @@ function movePlayer(code) {
 
     if (coordEquality(player_pos, troph_pos)) {
         trophies++;
+        trophy_timer = 25;
+        energy += 2;
         $("#trophy").hide();
-        $("#trophyInfo").text("Trophies: " + trophies + " / 11");
-        newTrophy(troph_pos);
-        if (trophies === 11) {
-            trophies = 0;
-            $("#trophyInfo").text("Trophies: " + trophies + " / 11");
-            curr_level++
-            $("#currentLevel").text("Level: " + curr_level);
-            var enemy_length = enemy_list.length;
-            for (var i = enemy_length - 1; i > -1; i--) {
-                $("#e" + enemy_list[i].id).remove();
-                enemy_list.splice(i, 1);
-            }
-        }
+        updateTrophies();
     }
 
     enemyMove();
@@ -188,6 +206,12 @@ function movePlayer(code) {
     }
 
     if (valid_move) {
+        trophy_timer--;
+        if (trophy_timer < 1) {
+            trophy_timer = 0;
+            energy--;
+        }
+
         $("#drawInfo").text("Draws: " + draw_count);
 
         if (Math.random() > resource_thresh) {
@@ -201,6 +225,7 @@ function movePlayer(code) {
         }
 
         updateHealth();
+        updateEnergy();
         valid_move = false;
     }
 }
@@ -328,21 +353,44 @@ function newEnemy() {
     if (colors[0] === "yellow") {
         text_color = "black";
     }
-    var enemy = makeEnemy(coord, colors[0], curr_level, curr_level, movement);
+    var enemy = makeEnemy(coord, colors[0], curr_level, movement);
     var top_left = [enemy.position[0] * SPACE + PADDING, 30 - (enemy.position[1] * SPACE) + PADDING];
     $("#game").append('<div class="enemy" id="e' + enemy.id + '" style="top: ' + top_left[1] + 'vw; left: ' + top_left[0] + 'vw; display: none; background-color: ' + enemy.type + '; color: ' + text_color + ';">' + enemy.damage + '/' + enemy.health + '</div>');
     $("#e" + enemy.id).fadeIn(80);
 }
 
-function makeEnemy(coord, color, damage, health, movement) {
+function makeEnemy(coord, color, level, movement) {
+    var hp = Math.random();
+    var dam = Math.random();
+    var ener = Math.random();
+    let chosen_hp, chosen_dam, chosen_ener, chosen_pur;
+    var index = 1;
+    var index2 = 1;
+    var index3 = 1;
+    do {
+        chosen_hp = index;
+        index++;
+    } while (HPDAM[level][index] > hp);
+    do {
+        chosen_dam = index2;
+        index2++;
+    } while (HPDAM[level][index2] > dam);
+    do {
+        chosen_ener = index3;
+        index3++;
+    } while (ENERGY[level][index3] > ener);
+    if (Math.random() > PURSUE[level]) {
+        chosen_pur = true;
+    }
     let enemy = {
         id: enemy_count,
         position: coord,
         type: color,
-        damage: damage,
-        health: health,
-        energy: (curr_level % 2) + 1,
-        movement: movement,
+        damage: chosen_dam,
+        health: chosen_hp,
+        energy: chosen_ener,
+        pursuit: chosen_pur,
+        movement: movement
     }
     enemy_list.push(enemy);
     enemy_count++;
@@ -451,6 +499,10 @@ function updatePalette(color, adjustment) {
 
 function enemyMove() {
     for (var i = 0; i < enemy_list.length; i++) {
+        if (enemy_list[i].pursuit) {
+            enemyPursuit(enemy_list[i]);
+        } 
+
         if (enemy_list[i].movement === "UP" && enemy_list[i].position[1] === 10) {
             enemy_list[i].movement = "DOWN";
         } else if (enemy_list[i].movement === "DOWN" && enemy_list[i].position[1] === 0) {
@@ -460,7 +512,7 @@ function enemyMove() {
         } else if (enemy_list[i].movement === "LEFT" && enemy_list[i].position[0] === 0) {
             enemy_list[i].movement = "RIGHT";
         }
-
+    
         if (enemy_list[i].movement === "UP") {
             $("#e" + enemy_list[i].id).animate({top: '-=2.85vw'}, 60);
             $("#e" + enemy_list[i].id).animate({top: '-=.15vw'}, 10);
@@ -624,7 +676,7 @@ function engage(type) {
         var enemy_length = enemy_list.length;
         for (var i = 0; i < ADJACENT.length; i++) {
             for (var j = enemy_length - 1; j > -1; j--) {
-                if (coordEquality([player_pos[0] + ADJACENT[i], player_pos[1]], enemy_list[j].position) || coordEquality([player_pos[0] + ADJACENT[i], player_pos[1] + ADJACENT[i]], enemy_list[j].position) || coordEquality([player_pos[0], player_pos[1] + ADJACENT[i]], enemy_list[j].position)) {
+                if (coordEquality([player_pos[0] + ADJACENT[i], player_pos[1]], enemy_list[j].position) || coordEquality([player_pos[0] + ADJACENT[i], player_pos[1] + ADJACENT[i]], enemy_list[j].position) || coordEquality([player_pos[0], player_pos[1] + ADJACENT[i]], enemy_list[j].position) || coordEquality([player_pos[0] - ADJACENT[i], player_pos[1] + ADJACENT[i]], enemy_list[j].position)) {
                     enemy_list[j].health--;
                 }
             }
@@ -632,7 +684,10 @@ function engage(type) {
     } else if (type === "yellow") {
         if (Math.random() > yellow_chance) {
             trophies++;
-            $("#trophyInfo").text("Trophies: " + trophies + " / 11");
+            trophy_timer = 25;
+            energy += 2;
+            $("#trophy").hide();
+            updateTrophies();
         }
     } else if (type === "green") {
         health++;
@@ -679,4 +734,95 @@ function checkEnemy() {
         defense_turn = false;
         $(".attackChoices, .defenseChoices").css("opacity", 0.5);
     }
+}
+
+function enemyPursuit(enemy) {
+    if (coordEquality(enemy.position, player_pos)) {
+        enemy.movement = "STAY";
+    } else if (enemy.position[1] === player_pos[1]) {
+        if (enemy.position[0] > player_pos[0]) {
+            enemy.movement = "LEFT";
+        } else if (enemy.position[0] < player_pos[0]) {
+            enemy.movement = "RIGHT";
+        }
+    } else if (enemy.position[0] === player_pos[0]) {
+        if (enemy.position[1] > player_pos[1]) {
+            enemy.movement = "DOWN";
+        } else if (enemy.position[1] < player_pos[1]) {
+            enemy.movement = "UP";
+        }
+    } else {
+        var x_delta = player_pos[0] - enemy.position[0];
+        var y_delta = player_pos[1] - enemy.position[1];
+        let angle = Math.atan((y_delta / x_delta)) * (180 / Math.PI);
+        if (angle < 45 && angle > 0) {
+            if (x_delta > 0) {
+                enemy.movement = "RIGHT";
+            } else {
+                enemy.movement = "LEFT";
+            }
+        } else if (angle > 45 && angle < 90) {
+            if (x_delta > 0) {
+                enemy.movement = "UP";
+            } else {
+                enemy.movement = "DOWN";
+            }
+        } else if (angle < 0 && angle > -45) {
+            if (x_delta > 0) {
+                enemy.movement = "RIGHT";
+            } else {
+                enemy.movement = "LEFT";
+            }
+        } else if (angle < -45 && angle > -90) {
+            if (x_delta > 0) {
+                enemy.movement = "DOWN";
+            } else {
+                enemy.movement = "UP";
+            }
+        } else if (angle === 45) {
+            if (x_delta > 0) {
+                if (Math.random() > 0.5) {
+                    enemy.movement = "UP";
+                } else {
+                    enemy.movement = "RIGHT";
+                }
+            } else {
+                if (Math.random() > 0.5) {
+                    enemy.movement = "DOWN";
+                } else {
+                    enemy.movement = "LEFT";
+                }
+            }
+        } else if (angle === -45) {
+            if (x_delta > 0) {
+                if (Math.random() > 0.5) {
+                    enemy.movement = "DOWN";
+                } else {
+                    enemy.movement = "RIGHT";
+                }
+            } else {
+                if (Math.random() > 0.5) {
+                    enemy.movement = "UP";
+                } else {
+                    enemy.movement = "LEFT";
+                }
+            }
+        }
+    }
+}
+
+function updateTrophies() {
+    $("#trophyInfo").text("Trophies: " + trophies + " / 11");
+    if (trophies === 11) {
+        trophies = 0;
+        $("#trophyInfo").text("Trophies: " + trophies + " / 11");
+        curr_level++
+        $("#currentLevel").text("Level: " + curr_level);
+        var enemy_length = enemy_list.length;
+        for (var i = enemy_length - 1; i > -1; i--) {
+            $("#e" + enemy_list[i].id).remove();
+            enemy_list.splice(i, 1);
+        }
+    }
+    newTrophy(troph_pos);
 }
