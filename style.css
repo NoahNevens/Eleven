@@ -268,10 +268,6 @@ header {
     font-family: 'Lato', sans-serif;
 }
 
-.middle:hover {
-    cursor: pointer;
-}
-
 button:hover {
     cursor: pointer;
 }
@@ -586,4 +582,72 @@ button:hover {
     color: red;
     display: none;
     text-shadow: 0.5px 0.5px 1px #0000006c;
+}
+
+.card {
+    width: 14vw;
+    height: 4.0625vw;
+    position: absolute;
+    background-color: rgb(100, 100, 100);
+    border-radius: 1vw;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.19);
+}
+
+#restoreHealth {
+    top: 0.75vw;
+    left: 0.5vw;
+}
+
+#restoreEnergy {
+    top: 5.5625vw;
+    left: 0.5vw;
+}
+
+#increaseYellow {
+    top: 10.375vw;
+    left: 0.5vw;
+}
+
+#moreDamage {
+    top: 15.1875vw;
+    left: 0.5vw;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: rgb(60, 60, 60);
+}
+
+.abilityName {
+    position: absolute;
+    top: 0.7vw;
+    left: 0.5vw;
+    color: white;
+    font-size: 0.7vw;
+    font-family: 'Lato', sans-serif;
+}
+
+.abilityDescript {
+    position: absolute;
+    top: 2.3vw;
+    left: 0.5vw;
+    color: rgb(218, 216, 216);
+    font-size: 0.5vw;
+    font-family: 'Roboto Slab', serif;
+}
+
+.abilityCost {
+    position: absolute;
+    top: 1vw;
+    right: 2.5vw;
+    color: rgb(218, 216, 216);
+    font-size: 1.2vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.abilityCostBlock {
+    position: absolute;
+    top: 1vw;
+    background-color: rgb(145, 144, 144);
+    right: 0.5vw;
 }
