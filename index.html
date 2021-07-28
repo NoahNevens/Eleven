@@ -14,362 +14,398 @@
     </head>
     <body>
         <header>Miasma</header>
-        <div id="controlPanel">
-            <h1>Control Panel</h1>
-            <button class="topButtons" id="controls" style="left: 51vw;">Rules</button>
-            <button class="topButtons" id="cards" style="left: 45.5vw;">Cards</button>
-            <button class="topButtons" id="colors" style="left: 40vw;">Types</button>
-            <button class="topButtons" id="draw" style="left: 7vw;">Draw</button>
-            <button class="topButtons" id="storm" style="left: 22vw;">Storm</button>
-            <button class="topButtons" id="save" style="left: 28.4vw;">Save</button>
-            <div id="cardHolder"></div>
-            <span id="healthInfo">Health: 100</span>
-            <span id="energyInfo">Energy: 100</span>
-            <div class="bar" id="health"></div>
-            <div class="bar" id="energy"></div>
-            <div id="repository"></div>
-            <div id="hexagon1">
-                <div class="top"></div>
-                <div class="middle">0</div>
-                <div class="bottom"></div>
-            </div>
-            <div id="hexagon2">
-                <div class="top"></div>
-                <div class="middle">0</div>
-                <div class="bottom"></div>
-            </div>
-            <div id="hexagon3">
-                <div class="top"></div>
-                <div class="middle">0</div>
-                <div class="bottom"></div>
-            </div>
-            <div id="hexagon4">
-                <div class="top"></div>
-                <div class="middle">0</div>
-                <div class="bottom"></div>
-            </div>
-            <div id="hexagon5">
-                <div class="top"></div>
-                <div class="middle">0</div>
-                <div class="bottom"></div>
-            </div>
-            <div id="hexagon6">
-                <div class="top"></div>
-                <div class="middle">0</div>
-                <div class="bottom"></div>
-            </div>
-            <div id="hexagon7">
-                <div class="top"></div>
-                <div class="middle">0</div>
-                <div class="bottom"></div>
-            </div>
+        <div id="startingPage">
+            <div class="role"></div>
+            <div class="role"></div>
+            <div class="role"></div>
+            <div class="role"></div>
+            <div class="role"></div>
+            <div class="role"></div>
+            <div class="role"></div>
         </div>
-        <div id="arena">
-            <h2 id="trophyInfo" style="left: 1vw;">Trophies: 0 / 11</h2>
-            <h2 id="currentLevel" style="right: 1vw;">Level: 1</h2>
-            <h2 id="drawInfo" style="left: 15vw;">Draws: 0</h2>
-            <div id="game">
-                <div class="square" id="11" style="left: 0vw; top: 0vw;"></div>
-                <div class="square" id="21" style="left: 3vw; top: 0vw;"></div>
-                <div class="square" id="31" style="left: 6vw; top: 0vw;"></div>
-                <div class="square" id="41" style="left: 9vw; top: 0vw;"></div>
-                <div class="square" id="51" style="left: 12vw; top: 0vw;"></div>
-                <div class="square" id="61" style="left: 15vw; top: 0vw;"></div>
-                <div class="square" id="71" style="left: 18vw; top: 0vw;"></div>
-                <div class="square" id="81" style="left: 21vw; top: 0vw;"></div>
-                <div class="square" id="91" style="left: 24vw; top: 0vw;"></div>
-                <div class="square" id="101" style="left: 27vw; top: 0vw;"></div>
-                <div class="square" id="111" style="left: 30vw; top: 0vw;"></div>
-                <div class="square" id="12" style="left: 0vw; top: 3vw;"></div>
-                <div class="square" id="22" style="left: 3vw; top: 3vw;"></div>
-                <div class="square" id="32" style="left: 6vw; top: 3vw;"></div>
-                <div class="square" id="42" style="left: 9vw; top: 3vw;"></div>
-                <div class="square" id="52" style="left: 12vw; top: 3vw;"></div>
-                <div class="square" id="62" style="left: 15vw; top: 3vw;"></div>
-                <div class="square" id="72" style="left: 18vw; top: 3vw;"></div>
-                <div class="square" id="82" style="left: 21vw; top: 3vw;"></div>
-                <div class="square" id="92" style="left: 24vw; top: 3vw;"></div>
-                <div class="square" id="102" style="left: 27vw; top: 3vw;"></div>
-                <div class="square" id="112" style="left: 30vw; top: 3vw;"></div>
-                <div class="square" id="13" style="left: 0vw; top: 6vw;"></div>
-                <div class="square" id="23" style="left: 3vw; top: 6vw;"></div>
-                <div class="square" id="33" style="left: 6vw; top: 6vw;"></div>
-                <div class="square" id="43" style="left: 9vw; top: 6vw;"></div>
-                <div class="square" id="53" style="left: 12vw; top: 6vw;"></div>
-                <div class="square" id="63" style="left: 15vw; top: 6vw;"></div>
-                <div class="square" id="73" style="left: 18vw; top: 6vw;"></div>
-                <div class="square" id="83" style="left: 21vw; top: 6vw;"></div>
-                <div class="square" id="93" style="left: 24vw; top: 6vw;"></div>
-                <div class="square" id="103" style="left: 27vw; top: 6vw;"></div>
-                <div class="square" id="113" style="left: 30vw; top: 6vw;"></div>
-                <div class="square" id="14" style="left: 0vw; top: 9vw;"></div>
-                <div class="square" id="24" style="left: 3vw; top: 9vw;"></div>
-                <div class="square" id="34" style="left: 6vw; top: 9vw;"></div>
-                <div class="square" id="44" style="left: 9vw; top: 9vw;"></div>
-                <div class="square" id="54" style="left: 12vw; top: 9vw;"></div>
-                <div class="square" id="64" style="left: 15vw; top: 9vw;"></div>
-                <div class="square" id="74" style="left: 18vw; top: 9vw;"></div>
-                <div class="square" id="84" style="left: 21vw; top: 9vw;"></div>
-                <div class="square" id="94" style="left: 24vw; top: 9vw;"></div>
-                <div class="square" id="104" style="left: 27vw; top: 9vw;"></div>
-                <div class="square" id="114" style="left: 30vw; top: 9vw;"></div>
-                <div class="square" id="15" style="left: 0vw; top: 12vw;"></div>
-                <div class="square" id="25" style="left: 3vw; top: 12vw;"></div>
-                <div class="square" id="35" style="left: 6vw; top: 12vw;"></div>
-                <div class="square" id="45" style="left: 9vw; top: 12vw;"></div>
-                <div class="square" id="55" style="left: 12vw; top: 12vw;"></div>
-                <div class="square" id="65" style="left: 15vw; top: 12vw;"></div>
-                <div class="square" id="75" style="left: 18vw; top: 12vw;"></div>
-                <div class="square" id="85" style="left: 21vw; top: 12vw;"></div>
-                <div class="square" id="95" style="left: 24vw; top: 12vw;"></div>
-                <div class="square" id="105" style="left: 27vw; top: 12vw;"></div>
-                <div class="square" id="115" style="left: 30vw; top: 12vw;"></div>
-                <div class="square" id="16" style="left: 0vw; top: 15vw;"></div>
-                <div class="square" id="26" style="left: 3vw; top: 15vw;"></div>
-                <div class="square" id="36" style="left: 6vw; top: 15vw;"></div>
-                <div class="square" id="46" style="left: 9vw; top: 15vw;"></div>
-                <div class="square" id="56" style="left: 12vw; top: 15vw;"></div>
-                <div class="square" id="66" style="left: 15vw; top: 15vw;"></div>
-                <div class="square" id="76" style="left: 18vw; top: 15vw;"></div>
-                <div class="square" id="86" style="left: 21vw; top: 15vw;"></div>
-                <div class="square" id="96" style="left: 24vw; top: 15vw;"></div>
-                <div class="square" id="106" style="left: 27vw; top: 15vw;"></div>
-                <div class="square" id="116" style="left: 30vw; top: 15vw;"></div>
-                <div class="square" id="17" style="left: 0vw; top: 18vw;"></div>
-                <div class="square" id="27" style="left: 3vw; top: 18vw;"></div>
-                <div class="square" id="37" style="left: 6vw; top: 18vw;"></div>
-                <div class="square" id="47" style="left: 9vw; top: 18vw;"></div>
-                <div class="square" id="57" style="left: 12vw; top: 18vw;"></div>
-                <div class="square" id="67" style="left: 15vw; top: 18vw;"></div>
-                <div class="square" id="77" style="left: 18vw; top: 18vw;"></div>
-                <div class="square" id="87" style="left: 21vw; top: 18vw;"></div>
-                <div class="square" id="97" style="left: 24vw; top: 18vw;"></div>
-                <div class="square" id="107" style="left: 27vw; top: 18vw;"></div>
-                <div class="square" id="117" style="left: 30vw; top: 18vw;"></div>
-                <div class="square" id="18" style="left: 0vw; top: 21vw;"></div>
-                <div class="square" id="28" style="left: 3vw; top: 21vw;"></div>
-                <div class="square" id="38" style="left: 6vw; top: 21vw;"></div>
-                <div class="square" id="48" style="left: 9vw; top: 21vw;"></div>
-                <div class="square" id="58" style="left: 12vw; top: 21vw;"></div>
-                <div class="square" id="68" style="left: 15vw; top: 21vw;"></div>
-                <div class="square" id="78" style="left: 18vw; top: 21vw;"></div>
-                <div class="square" id="88" style="left: 21vw; top: 21vw;"></div>
-                <div class="square" id="98" style="left: 24vw; top: 21vw;"></div>
-                <div class="square" id="108" style="left: 27vw; top: 21vw;"></div>
-                <div class="square" id="118" style="left: 30vw; top: 21vw;"></div>
-                <div class="square" id="19" style="left: 0vw; top: 24vw;"></div>
-                <div class="square" id="29" style="left: 3vw; top: 24vw;"></div>
-                <div class="square" id="39" style="left: 6vw; top: 24vw;"></div>
-                <div class="square" id="49" style="left: 9vw; top: 24vw;"></div>
-                <div class="square" id="59" style="left: 12vw; top: 24vw;"></div>
-                <div class="square" id="69" style="left: 15vw; top: 24vw;"></div>
-                <div class="square" id="79" style="left: 18vw; top: 24vw;"></div>
-                <div class="square" id="89" style="left: 21vw; top: 24vw;"></div>
-                <div class="square" id="99" style="left: 24vw; top: 24vw;"></div>
-                <div class="square" id="109" style="left: 27vw; top: 24vw;"></div>
-                <div class="square" id="119" style="left: 30vw; top: 24vw;"></div>
-                <div class="square" id="110" style="left: 0vw; top: 27vw;"></div>
-                <div class="square" id="210" style="left: 3vw; top: 27vw;"></div>
-                <div class="square" id="310" style="left: 6vw; top: 27vw;"></div>
-                <div class="square" id="410" style="left: 9vw; top: 27vw;"></div>
-                <div class="square" id="510" style="left: 12vw; top: 27vw;"></div>
-                <div class="square" id="610" style="left: 15vw; top: 27vw;"></div>
-                <div class="square" id="710" style="left: 18vw; top: 27vw;"></div>
-                <div class="square" id="810" style="left: 21vw; top: 27vw;"></div>
-                <div class="square" id="910" style="left: 24vw; top: 27vw;"></div>
-                <div class="square" id="1010" style="left: 27vw; top: 27vw;"></div>
-                <div class="square" id="1110" style="left: 30vw; top: 27vw;"></div>
-                <div class="square" id="11One" style="left: 0vw; top: 30vw;"></div>
-                <div class="square" id="211" style="left: 3vw; top: 30vw;"></div>
-                <div class="square" id="311" style="left: 6vw; top: 30vw;"></div>
-                <div class="square" id="411" style="left: 9vw; top: 30vw;"></div>
-                <div class="square" id="511" style="left: 12vw; top: 30vw;"></div>
-                <div class="square" id="611" style="left: 15vw; top: 30vw;"></div>
-                <div class="square" id="711" style="left: 18vw; top: 30vw;"></div>
-                <div class="square" id="811" style="left: 21vw; top: 30vw;"></div>
-                <div class="square" id="911" style="left: 24vw; top: 30vw;"></div>
-                <div class="square" id="1011" style="left: 27vw; top: 30vw;"></div>
-                <div class="square" id="1111" style="left: 30vw; top: 30vw;"></div>
-                <div class="character" id="player">P</div>
-                <div class="character" id="trophy"></div>
-            </div>
-        </div>
-        <div class="overlay">
-            <div class="attackPage">
-                <h1>Duel</h1>
-                <h2 id="enemyDamage" style="top: 5vw;">Damage: </h2>
-                <h2 id="enemyHealth" style="top: 7vw;">Health: </h2>
-                <h2 id="enemyEnergy" style="top: 9vw;">Energy: </h2>
-                <h2 id="enemyType" style="top: 11vw;">Type: </h2>
-                <div id="enemyTypeBlock" class="infoBlock" style="top: 11.7vw; left: 4.5vw;"></div>
-                <div id="attackBlock" class="battleBlock">
-                    <span style="font-size: 1.5vw; position: absolute; font-family:'Lato', sans-serif">Offense: </span>
-                    <div id="redAttack" class="infoBlock attackChoices" style="left: 1vw; background-color: red; color: black;">0</div>
-                    <div id="orangeAttack" class="infoBlock attackChoices" style="left: 4vw; background-color: orange; color: black;">0</div>
-                    <div id="yellowAttack" class="infoBlock attackChoices" style="left: 7vw; background-color: yellow; color: black;">0</div>
-                    <div id="greenAttack" class="infoBlock attackChoices" style="left: 10vw; background-color: green; color: black;">0</div>
-                    <div id="blueAttack" class="infoBlock attackChoices" style="left: 13vw; background-color: blue; color: black;">0</div>
-                    <div id="indigoAttack" class="infoBlock attackChoices" style="left: 16vw; background-color: indigo; color: black;">0</div>
-                    <div id="violetAttack" class="infoBlock attackChoices" style="left: 19vw; background-color: violet; color: black;">0</div>
-                    <button id="commitAttack" class="battleBlockButtons" style="top: 6.4vw; left: 20vw; opacity: 0.5;">Attack</button>
-                    <button id="passAttack" class="battleBlockButtons" style="top: 6.4vw; left: 25vw;">Pass</button>
-                    <div id="lowResources" class="warning">Not Enough Resources</div>
-                    <div id="lowEnergy" class="warning">Not Enough Energy</div>
+        <div id="mainPage">
+            <div id="controlPanel">
+                <h1>Control Panel</h1>
+                <button class="topButtons" id="controls" style="left: 51vw;">Rules</button>
+                <button class="topButtons" id="cards" style="left: 45.5vw;">Cards</button>
+                <button class="topButtons" id="colors" style="left: 40vw;">Types</button>
+                <button class="topButtons" id="draw" style="left: 7vw;">Draw</button>
+                <button class="topButtons" id="storm" style="left: 21.5vw;">Storm</button>
+                <button class="topButtons" id="save" style="left: 28.9vw;">Cast</button>
+                <div id="cardHolder"></div>
+                <span id="healthInfo">Health: 100</span>
+                <span id="energyInfo">Energy: 100</span>
+                <div class="bar" id="health"></div>
+                <div class="bar" id="energy"></div>
+                <div id="repository">
+                    <div id="restoreEnergy" class="card">
+                        <div class="abilityName">Inspire</div>
+                        <div class="abilityDescript">Restore 75% of your missing energy</div>
+                        <div class="abilityCost">10</div>
+                        <div class="cardBlock abilityCostBlock"></div>
+                    </div>
+                    <div id="restoreHealth" class="card">
+                        <div class="abilityName">Regenerate</div>
+                        <div class="abilityDescript">Restore 50% of your missing health</div>
+                        <div class="abilityCost">10</div>
+                        <div class="cardBlock abilityCostBlock"></div>
+                    </div>
+                    <div id="increaseYellow" class="card">
+                        <div class="abilityName">Invest</div>
+                        <div class="abilityDescript">Raise trophy gain on yellow attack by 1%</div>
+                        <div class="abilityCost">2</div>
+                        <div class="cardBlock abilityCostBlock"></div>
+                    </div>
+                    <div id="moreDamage" class="card">
+                        <div class="abilityName">Battle Cry</div>
+                        <div class="abilityDescript">Red attacks deal +1 more damage</div>
+                        <div class="abilityCost">12</div>
+                        <div class="cardBlock abilityCostBlock"></div>
+                    </div>
                 </div>
-                <div id="defenseBlock" class="battleBlock">
-                    <span style="font-size: 1.5vw; position: absolute; font-family:'Lato', sans-serif">Defense: </span>
-                    <div id="redDefense" class="infoBlock defenseChoices" style="left: 1vw; display: none; background-color: red; color: black;">0</div>
-                    <div id="orangeDefense" class="infoBlock defenseChoices" style="left: 4vw; display: none; background-color: orange; color: black;">0</div>
-                    <div id="yellowDefense" class="infoBlock defenseChoices" style="left: 7vw; display: none; background-color: yellow; color: black;">0</div>
-                    <div id="greenDefense" class="infoBlock defenseChoices" style="left: 10vw; display: none; background-color: green; color: black;">0</div>
-                    <div id="blueDefense" class="infoBlock defenseChoices" style="left: 13vw; display: none; background-color: blue; color: black;">0</div>
-                    <div id="indigoDefense" class="infoBlock defenseChoices" style="left: 16vw; display: none; background-color: indigo; color: black;">0</div>
-                    <div id="violetDefense" class="infoBlock defenseChoices" style="left: 19vw; display: none; background-color: violet; color: black;">0</div>
-                    <button id="commitBlock" class="battleBlockButtons" style="top: 6.4vw; left: 20vw; opacity: 0.5;">Block</button>
-                    <button id="absorbAttack" class="battleBlockButtons" style="top: 6.4vw; left: 25vw;">Absorb</button>
-                    <div id="lowResources2" class="warning">Not Enough Resources</div>
+                <div id="hexagon1">
+                    <div class="top"></div>
+                    <div class="middle">0</div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="hexagon2">
+                    <div class="top"></div>
+                    <div class="middle">0</div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="hexagon3">
+                    <div class="top"></div>
+                    <div class="middle">0</div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="hexagon4">
+                    <div class="top"></div>
+                    <div class="middle">0</div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="hexagon5">
+                    <div class="top"></div>
+                    <div class="middle">0</div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="hexagon6">
+                    <div class="top"></div>
+                    <div class="middle">0</div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="hexagon7">
+                    <div class="top"></div>
+                    <div class="middle">0</div>
+                    <div class="bottom"></div>
                 </div>
             </div>
-            <div class="infoPage" id="colorInfo">
-                <h1>Types</h1>
-                <div class="infoBlock" id="greenBlock" style="top: 5vw; background-color: green;"></div>        
-                <div class="infoBlock" id="redBlock" style="top: 10vw; background-color: red;"></div>
-                <div class="infoBlock" id="indigoBlock" style="top: 15vw; background-color: indigo;"></div>
-                <div class="infoBlock" id="orangeBlock" style="top: 20vw; background-color: orange;"></div>
-                <div class="infoBlock" id="blueBlock" style="top: 25vw; background-color: blue;"></div>
-                <div class="infoBlock" id="violetBlock" style="top: 30vw; background-color: violet;"></div>
-                <div class="infoBlock" id="yellowBlock" style="top: 35vw; background-color: yellow;"></div>
-                <div class="infoRight" id="greenInfo" style="top: 5.5vw;">Attack: restore 1 health</div>
-                <div class="infoRight" id="redInfo" style="top: 10.5vw;">Attack: deal 2 damage</div>
-                <div class="infoRight" id="indigoInfo" style="top: 15.5vw;">Attack: increase resource drop by 0.5%</div>
-                <div class="infoRight" id="orangeInfo" style="top: 20.5vw;">Attack: all adjacent enemies take 1 damage</div>
-                <div class="infoRight" id="blueInfo" style="top: 25.5vw;">Attack: costs no energy</div>
-                <div class="infoRight" id="violetInfo" style="top: 30.5vw;">Attack: reduce enemy damage by 1</div>
-                <div class="infoRight" id="yellowInfo" style="top: 35.5vw;">Attack: 30% chance to earn a trophy</div>
-                <div class="clickToCont">click anywhere to continue</div>
+            <div id="arena">
+                <h2 id="trophyInfo" style="left: 1vw;">Trophies: 0 / 11</h2>
+                <h2 id="currentLevel" style="right: 1vw;">Level: 1</h2>
+                <h2 id="drawInfo" style="left: 15vw;">Draws: 0</h2>
+                <div id="game">
+                    <div class="square" id="11" style="left: 0vw; top: 0vw;"></div>
+                    <div class="square" id="21" style="left: 3vw; top: 0vw;"></div>
+                    <div class="square" id="31" style="left: 6vw; top: 0vw;"></div>
+                    <div class="square" id="41" style="left: 9vw; top: 0vw;"></div>
+                    <div class="square" id="51" style="left: 12vw; top: 0vw;"></div>
+                    <div class="square" id="61" style="left: 15vw; top: 0vw;"></div>
+                    <div class="square" id="71" style="left: 18vw; top: 0vw;"></div>
+                    <div class="square" id="81" style="left: 21vw; top: 0vw;"></div>
+                    <div class="square" id="91" style="left: 24vw; top: 0vw;"></div>
+                    <div class="square" id="101" style="left: 27vw; top: 0vw;"></div>
+                    <div class="square" id="111" style="left: 30vw; top: 0vw;"></div>
+                    <div class="square" id="12" style="left: 0vw; top: 3vw;"></div>
+                    <div class="square" id="22" style="left: 3vw; top: 3vw;"></div>
+                    <div class="square" id="32" style="left: 6vw; top: 3vw;"></div>
+                    <div class="square" id="42" style="left: 9vw; top: 3vw;"></div>
+                    <div class="square" id="52" style="left: 12vw; top: 3vw;"></div>
+                    <div class="square" id="62" style="left: 15vw; top: 3vw;"></div>
+                    <div class="square" id="72" style="left: 18vw; top: 3vw;"></div>
+                    <div class="square" id="82" style="left: 21vw; top: 3vw;"></div>
+                    <div class="square" id="92" style="left: 24vw; top: 3vw;"></div>
+                    <div class="square" id="102" style="left: 27vw; top: 3vw;"></div>
+                    <div class="square" id="112" style="left: 30vw; top: 3vw;"></div>
+                    <div class="square" id="13" style="left: 0vw; top: 6vw;"></div>
+                    <div class="square" id="23" style="left: 3vw; top: 6vw;"></div>
+                    <div class="square" id="33" style="left: 6vw; top: 6vw;"></div>
+                    <div class="square" id="43" style="left: 9vw; top: 6vw;"></div>
+                    <div class="square" id="53" style="left: 12vw; top: 6vw;"></div>
+                    <div class="square" id="63" style="left: 15vw; top: 6vw;"></div>
+                    <div class="square" id="73" style="left: 18vw; top: 6vw;"></div>
+                    <div class="square" id="83" style="left: 21vw; top: 6vw;"></div>
+                    <div class="square" id="93" style="left: 24vw; top: 6vw;"></div>
+                    <div class="square" id="103" style="left: 27vw; top: 6vw;"></div>
+                    <div class="square" id="113" style="left: 30vw; top: 6vw;"></div>
+                    <div class="square" id="14" style="left: 0vw; top: 9vw;"></div>
+                    <div class="square" id="24" style="left: 3vw; top: 9vw;"></div>
+                    <div class="square" id="34" style="left: 6vw; top: 9vw;"></div>
+                    <div class="square" id="44" style="left: 9vw; top: 9vw;"></div>
+                    <div class="square" id="54" style="left: 12vw; top: 9vw;"></div>
+                    <div class="square" id="64" style="left: 15vw; top: 9vw;"></div>
+                    <div class="square" id="74" style="left: 18vw; top: 9vw;"></div>
+                    <div class="square" id="84" style="left: 21vw; top: 9vw;"></div>
+                    <div class="square" id="94" style="left: 24vw; top: 9vw;"></div>
+                    <div class="square" id="104" style="left: 27vw; top: 9vw;"></div>
+                    <div class="square" id="114" style="left: 30vw; top: 9vw;"></div>
+                    <div class="square" id="15" style="left: 0vw; top: 12vw;"></div>
+                    <div class="square" id="25" style="left: 3vw; top: 12vw;"></div>
+                    <div class="square" id="35" style="left: 6vw; top: 12vw;"></div>
+                    <div class="square" id="45" style="left: 9vw; top: 12vw;"></div>
+                    <div class="square" id="55" style="left: 12vw; top: 12vw;"></div>
+                    <div class="square" id="65" style="left: 15vw; top: 12vw;"></div>
+                    <div class="square" id="75" style="left: 18vw; top: 12vw;"></div>
+                    <div class="square" id="85" style="left: 21vw; top: 12vw;"></div>
+                    <div class="square" id="95" style="left: 24vw; top: 12vw;"></div>
+                    <div class="square" id="105" style="left: 27vw; top: 12vw;"></div>
+                    <div class="square" id="115" style="left: 30vw; top: 12vw;"></div>
+                    <div class="square" id="16" style="left: 0vw; top: 15vw;"></div>
+                    <div class="square" id="26" style="left: 3vw; top: 15vw;"></div>
+                    <div class="square" id="36" style="left: 6vw; top: 15vw;"></div>
+                    <div class="square" id="46" style="left: 9vw; top: 15vw;"></div>
+                    <div class="square" id="56" style="left: 12vw; top: 15vw;"></div>
+                    <div class="square" id="66" style="left: 15vw; top: 15vw;"></div>
+                    <div class="square" id="76" style="left: 18vw; top: 15vw;"></div>
+                    <div class="square" id="86" style="left: 21vw; top: 15vw;"></div>
+                    <div class="square" id="96" style="left: 24vw; top: 15vw;"></div>
+                    <div class="square" id="106" style="left: 27vw; top: 15vw;"></div>
+                    <div class="square" id="116" style="left: 30vw; top: 15vw;"></div>
+                    <div class="square" id="17" style="left: 0vw; top: 18vw;"></div>
+                    <div class="square" id="27" style="left: 3vw; top: 18vw;"></div>
+                    <div class="square" id="37" style="left: 6vw; top: 18vw;"></div>
+                    <div class="square" id="47" style="left: 9vw; top: 18vw;"></div>
+                    <div class="square" id="57" style="left: 12vw; top: 18vw;"></div>
+                    <div class="square" id="67" style="left: 15vw; top: 18vw;"></div>
+                    <div class="square" id="77" style="left: 18vw; top: 18vw;"></div>
+                    <div class="square" id="87" style="left: 21vw; top: 18vw;"></div>
+                    <div class="square" id="97" style="left: 24vw; top: 18vw;"></div>
+                    <div class="square" id="107" style="left: 27vw; top: 18vw;"></div>
+                    <div class="square" id="117" style="left: 30vw; top: 18vw;"></div>
+                    <div class="square" id="18" style="left: 0vw; top: 21vw;"></div>
+                    <div class="square" id="28" style="left: 3vw; top: 21vw;"></div>
+                    <div class="square" id="38" style="left: 6vw; top: 21vw;"></div>
+                    <div class="square" id="48" style="left: 9vw; top: 21vw;"></div>
+                    <div class="square" id="58" style="left: 12vw; top: 21vw;"></div>
+                    <div class="square" id="68" style="left: 15vw; top: 21vw;"></div>
+                    <div class="square" id="78" style="left: 18vw; top: 21vw;"></div>
+                    <div class="square" id="88" style="left: 21vw; top: 21vw;"></div>
+                    <div class="square" id="98" style="left: 24vw; top: 21vw;"></div>
+                    <div class="square" id="108" style="left: 27vw; top: 21vw;"></div>
+                    <div class="square" id="118" style="left: 30vw; top: 21vw;"></div>
+                    <div class="square" id="19" style="left: 0vw; top: 24vw;"></div>
+                    <div class="square" id="29" style="left: 3vw; top: 24vw;"></div>
+                    <div class="square" id="39" style="left: 6vw; top: 24vw;"></div>
+                    <div class="square" id="49" style="left: 9vw; top: 24vw;"></div>
+                    <div class="square" id="59" style="left: 12vw; top: 24vw;"></div>
+                    <div class="square" id="69" style="left: 15vw; top: 24vw;"></div>
+                    <div class="square" id="79" style="left: 18vw; top: 24vw;"></div>
+                    <div class="square" id="89" style="left: 21vw; top: 24vw;"></div>
+                    <div class="square" id="99" style="left: 24vw; top: 24vw;"></div>
+                    <div class="square" id="109" style="left: 27vw; top: 24vw;"></div>
+                    <div class="square" id="119" style="left: 30vw; top: 24vw;"></div>
+                    <div class="square" id="110" style="left: 0vw; top: 27vw;"></div>
+                    <div class="square" id="210" style="left: 3vw; top: 27vw;"></div>
+                    <div class="square" id="310" style="left: 6vw; top: 27vw;"></div>
+                    <div class="square" id="410" style="left: 9vw; top: 27vw;"></div>
+                    <div class="square" id="510" style="left: 12vw; top: 27vw;"></div>
+                    <div class="square" id="610" style="left: 15vw; top: 27vw;"></div>
+                    <div class="square" id="710" style="left: 18vw; top: 27vw;"></div>
+                    <div class="square" id="810" style="left: 21vw; top: 27vw;"></div>
+                    <div class="square" id="910" style="left: 24vw; top: 27vw;"></div>
+                    <div class="square" id="1010" style="left: 27vw; top: 27vw;"></div>
+                    <div class="square" id="1110" style="left: 30vw; top: 27vw;"></div>
+                    <div class="square" id="11One" style="left: 0vw; top: 30vw;"></div>
+                    <div class="square" id="211" style="left: 3vw; top: 30vw;"></div>
+                    <div class="square" id="311" style="left: 6vw; top: 30vw;"></div>
+                    <div class="square" id="411" style="left: 9vw; top: 30vw;"></div>
+                    <div class="square" id="511" style="left: 12vw; top: 30vw;"></div>
+                    <div class="square" id="611" style="left: 15vw; top: 30vw;"></div>
+                    <div class="square" id="711" style="left: 18vw; top: 30vw;"></div>
+                    <div class="square" id="811" style="left: 21vw; top: 30vw;"></div>
+                    <div class="square" id="911" style="left: 24vw; top: 30vw;"></div>
+                    <div class="square" id="1011" style="left: 27vw; top: 30vw;"></div>
+                    <div class="square" id="1111" style="left: 30vw; top: 30vw;"></div>
+                    <div class="character" id="player">P</div>
+                    <div class="character" id="trophy"></div>
+                </div>
             </div>
-            <div class="infoPage" id="cardInfo">
-                <h1>Cards</h1>
-                <div class="cardBlock" id="orangeCard" style="top: 5vw; left: 3vw; background-color: orange;"></div>
-                <div class="cardBlock" id="greenCard" style="top: 5vw; left: 4.5vw; background-color: green;"></div>
-                <div class="cardBlock" id="indigoCard" style="top: 8vw; left: 3vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 8vw; left: 4.5vw; background-color: violet;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 11vw; left: 3vw; background-color: blue;"></div>
-                <div class="cardBlock" id="yellowCard" style="top: 11vw; left: 4.5vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="redCard" style="top: 14vw; left: 3vw; background-color: red;"></div>
-                <div class="cardBlock" id="orangeCard" style="top: 14vw; left: 4.5vw; background-color: green;"></div>
-                <div class="cardBlock" id="yellowCard" style="top: 17vw; left: 3vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="indigoCard" style="top: 17vw; left: 4.5vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 20vw; left: 3vw; background-color: violet;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 20vw; left: 4.5vw; background-color: blue;"></div>
-                <div class="cardBlock" id="redCard" style="top: 20vw; left: 6vw; background-color: red;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 23vw; left: 3vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 23vw; left: 4.5vw; background-color: orange;"></div>
-                <div class="cardBlock" id="redCard" style="top: 23vw; left: 6vw; background-color: orange;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 26vw; left: 3vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 26vw; left: 4.5vw; background-color: green;"></div>
-                <div class="cardBlock" id="redCard" style="top: 26vw; left: 6vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="redCard" style="top: 26vw; left: 7.5vw; background-color: red;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 29vw; left: 3vw; background-color: orange;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 29vw; left: 4.5vw; background-color: blue;"></div>
-                <div class="cardBlock" id="redCard" style="top: 29vw; left: 6vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="redCard" style="top: 29vw; left: 7.5vw; background-color: red;"></div>
-                <div class="cardBlock" id="redCard" style="top: 29vw; left: 9vw; background-color: violet;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 32vw; left: 3vw; background-color: blue;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 32vw; left: 4.5vw; background-color: blue;"></div>
-                <div class="cardBlock" id="redCard" style="top: 32vw; left: 6vw; background-color: blue;"></div>
-                <div class="cardBlock" id="redCard" style="top: 32vw; left: 7.5vw; background-color: green;"></div>
-                <div class="cardBlock" id="redCard" style="top: 32vw; left: 9vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 35vw; left: 3vw; background-color: red;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 35vw; left: 4.5vw; background-color: red;"></div>
-                <div class="cardBlock" id="redCard" style="top: 35vw; left: 6vw; background-color: red;"></div>
-                <div class="cardBlock" id="redCard" style="top: 35vw; left: 7.5vw; background-color: orange;"></div>
-                <div class="cardBlock" id="redCard" style="top: 35vw; left: 9vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="redCard" style="top: 35vw; left: 10.5vw; background-color: violet;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 38vw; left: 3vw; background-color: red;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 38vw; left: 4.5vw; background-color: orange;"></div>
-                <div class="cardBlock" id="redCard" style="top: 38vw; left: 6vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="redCard" style="top: 38vw; left: 7.5vw; background-color: green;"></div>
-                <div class="cardBlock" id="redCard" style="top: 38vw; left: 9vw; background-color: blue;"></div>
-                <div class="cardBlock" id="redCard" style="top: 38vw; left: 10.5vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="redCard" style="top: 38vw; left: 12vw; background-color: violet;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 5vw; left: 23vw; background-color: red;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 5vw; left: 24.5vw; background-color: red;"></div>
-                <div class="cardBlock" id="redCard" style="top: 5vw; left: 26vw; background-color: red;"></div>
-                <div class="cardBlock" id="redCard" style="top: 5vw; left: 27.5vw; background-color: red;"></div>
-                <div class="cardBlock" id="redCard" style="top: 8vw; left: 23vw; background-color: orange;"></div>
-                <div class="cardBlock" id="redCard" style="top: 8vw; left: 24.5vw; background-color: orange;"></div>
-                <div class="cardBlock" id="redCard" style="top: 8vw; left: 26vw; background-color: orange;"></div>
-                <div class="cardBlock" id="redCard" style="top: 8vw; left: 27.5vw; background-color: orange;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 11vw; left: 23vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 11vw; left: 24.5vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="redCard" style="top: 11vw; left: 26vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="redCard" style="top: 11vw; left: 27.5vw; background-color: yellow;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 14vw; left: 23vw; background-color: green;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 14vw; left: 24.5vw; background-color: green;"></div>
-                <div class="cardBlock" id="redCard" style="top: 14vw; left: 26vw; background-color: green;"></div>
-                <div class="cardBlock" id="redCard" style="top: 14vw; left: 27.5vw; background-color: green;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 17vw; left: 23vw; background-color: blue;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 17vw; left: 24.5vw; background-color: blue;"></div>
-                <div class="cardBlock" id="redCard" style="top: 17vw; left: 26vw; background-color: blue;"></div>
-                <div class="cardBlock" id="redCard" style="top: 17vw; left: 27.5vw; background-color: blue;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 20vw; left: 23vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 20vw; left: 24.5vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="redCard" style="top: 20vw; left: 26vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="redCard" style="top: 20vw; left: 27.5vw; background-color: indigo;"></div>
-                <div class="cardBlock" id="violetCard" style="top: 23vw; left: 23vw; background-color: violet;"></div>
-                <div class="cardBlock" id="blueCard" style="top: 23vw; left: 24.5vw; background-color: violet;"></div>
-                <div class="cardBlock" id="redCard" style="top: 23vw; left: 26vw; background-color: violet;"></div>
-                <div class="cardBlock" id="redCard" style="top: 23vw; left: 27.5vw; background-color: violet;"></div>
-                <div class="blockRight" style="top: 5.3vw; left: 7vw;">2 free blocks against any type</div>
-                <div class="blockRight" style="top: 8.3vw; left: 7vw;">Draw 4 free cards</div>
-                <div class="blockRight" style="top: 11.3vw; left: 7vw">Increase resource spawn chance by 1%</div>
-                <div class="blockRight" style="top: 14.3vw; left: 7vw;">Next attack deals 5% of your health</div>
-                <div class="blockRight" style="top: 17.3vw; left: 7vw;">Increase trophy gain on yellow attack by 1%</div>
-                <div class="blockRight" style="top: 20.3vw; left: 8.5vw;">Reduce enemy spawn chance by 0.3%</div>
-                <div class="blockRight" style="top: 23.3vw; left: 8.5vw;">Deal 2 damage to all enemies*</div>
-                <div class="blockRight" style="top: 26.3vw; left: 10vw;">Trophies are doubled for rest of level but deal 5 damage</div>
-                <div class="blockRight" style="top: 29.3vw; left: 11.5vw;">Target and kill an enemy</div>
-                <div class="blockRight" style="top: 32.3vw; left: 11.5vw;">Main color attacks deal (1% energy) more damage, stacking</div>
-                <div class="blockRight" style="top: 35.3vw; left: 13vw;">All attacks deal +1 damage to targeted enemy</div>
-                <div class="blockRight" style="top: 38.3vw; left: 14.5vw;">Acquire all colors on board and the trophy</div>
-                <div class="blockRight" style="top: 5.3vw; left: 30vw;">Deal 12 damage to selected enemy</div>
-                <div class="blockRight" style="top: 8.3vw; left: 30vw;">Deal 7 damage to adjacent enemies</div>
-                <div class="blockRight" style="top: 11.3vw; left: 30vw;">Gain 3 trophies</div>
-                <div class="blockRight" style="top: 14.3vw; left: 30vw;">Restore 50% of missing health</div>
-                <div class="blockRight" style="top: 17.3vw; left: 30vw;">Restore 75% of missing energy</div>
-                <div class="blockRight" style="top: 20.3vw; left: 30vw;">Enemies can be blocked by any color*</div>
-                <div class="blockRight" style="top: 23.3vw; left: 30vw;">Enemies stand still for next 10 moves*</div>
-                <div class="blockRight" id="conditional" style="left: 14vw; top: 41vw;">*Only applies to enemies currently on the board</div>
-                <div class="clickToCont">click anywhere to continue</div>
-            </div>
-            <div class="infoPage" id="controlInfo">
-                <h1>Rules</h1>
-                <ul>
-                    <li>Collect all trophies to pass level, pass all levels to win game</li>
-                    <li>Move with WASD, click buttons</li>
-                    <li>Lose when health reaches 0</li>
-                    <li>Draw types (colors) using "Draw" or by collecting them in arena</li>
-                    <li>Use types to attack, block, and cast abilities (attacks and abilities cost 1 energy)</li>
-                    <li>When you bump into enemies you can attack them and they can attack you</li>
-                    <li>You can attack enemies with any type except their own (e.g. red enemies cannot be attacked with red)</li>
-                    <li>Different types have different effects when you attack with them</li>
-                    <li>You can block an attack with the same type (e.g. a blue enemy can be blocked with blue)</li>
-                    <li>If you don't block you take damage</li>
-                    <li>Abilities can be cast when you have the necessary color schemes, read descriptions</li>
-                    <li>You have a limited number of draws that increases every 4 moves (draws also cost 1 energy)</li>
-                    <li>If you move 12 consecutive times without collecting a trophy you will start taking damage</li>
-                    <li>Types have a 7% chance of spawning on the arena with each move</li>
-                    <li>Guard enemies stand still and spawn at the beginning of each level</li>
-                    <li>Chaser enemies move toward the main player with each move</li>
-                    <li>Chaser enemies have a ???% chance of spawning on the arena with each move</li>
-                    <li>Enemies get tougher and more unique with each level</li>
-                    <li>When you collect a trophy the next trophy will spawn at another place on the arena</li>
-                    <li>"Storm" destroys all enemies on arena but costs 10 * (current level) health and energy</li>
-                    <li>"Cast" allows you to cast an ability after clicking it</li>
-                    <li>When you reach 0 energy you can't really do much</li>
-                </ul>
-                <div class="clickToCont">click anywhere to continue</div>
+            <div class="overlay">
+                <div class="attackPage">
+                    <h1>Duel</h1>
+                    <h2 id="enemyDamage" style="top: 5vw;">Damage: </h2>
+                    <h2 id="enemyHealth" style="top: 7vw;">Health: </h2>
+                    <h2 id="enemyEnergy" style="top: 9vw;">Energy: </h2>
+                    <h2 id="enemyType" style="top: 11vw;">Type: </h2>
+                    <div id="enemyTypeBlock" class="infoBlock" style="top: 11.7vw; left: 4.5vw;"></div>
+                    <div id="attackBlock" class="battleBlock">
+                        <span style="font-size: 1.5vw; position: absolute; font-family:'Lato', sans-serif">Offense: </span>
+                        <div id="redAttack" class="infoBlock attackChoices" style="left: 1vw; background-color: red; color: black;">0</div>
+                        <div id="orangeAttack" class="infoBlock attackChoices" style="left: 4vw; background-color: orange; color: black;">0</div>
+                        <div id="yellowAttack" class="infoBlock attackChoices" style="left: 7vw; background-color: yellow; color: black;">0</div>
+                        <div id="greenAttack" class="infoBlock attackChoices" style="left: 10vw; background-color: green; color: black;">0</div>
+                        <div id="blueAttack" class="infoBlock attackChoices" style="left: 13vw; background-color: blue; color: black;">0</div>
+                        <div id="indigoAttack" class="infoBlock attackChoices" style="left: 16vw; background-color: indigo; color: black;">0</div>
+                        <div id="violetAttack" class="infoBlock attackChoices" style="left: 19vw; background-color: violet; color: black;">0</div>
+                        <button id="commitAttack" class="battleBlockButtons" style="top: 6.4vw; left: 20vw; opacity: 0.5;">Attack</button>
+                        <button id="passAttack" class="battleBlockButtons" style="top: 6.4vw; left: 25vw;">Pass</button>
+                        <div id="lowResources" class="warning">Not Enough Resources</div>
+                        <div id="lowEnergy" class="warning">Not Enough Energy</div>
+                    </div>
+                    <div id="defenseBlock" class="battleBlock">
+                        <span style="font-size: 1.5vw; position: absolute; font-family:'Lato', sans-serif">Defense: </span>
+                        <div id="redDefense" class="infoBlock defenseChoices" style="left: 1vw; display: none; background-color: red; color: black;">0</div>
+                        <div id="orangeDefense" class="infoBlock defenseChoices" style="left: 4vw; display: none; background-color: orange; color: black;">0</div>
+                        <div id="yellowDefense" class="infoBlock defenseChoices" style="left: 7vw; display: none; background-color: yellow; color: black;">0</div>
+                        <div id="greenDefense" class="infoBlock defenseChoices" style="left: 10vw; display: none; background-color: green; color: black;">0</div>
+                        <div id="blueDefense" class="infoBlock defenseChoices" style="left: 13vw; display: none; background-color: blue; color: black;">0</div>
+                        <div id="indigoDefense" class="infoBlock defenseChoices" style="left: 16vw; display: none; background-color: indigo; color: black;">0</div>
+                        <div id="violetDefense" class="infoBlock defenseChoices" style="left: 19vw; display: none; background-color: violet; color: black;">0</div>
+                        <button id="commitBlock" class="battleBlockButtons" style="top: 6.4vw; left: 20vw; opacity: 0.5;">Block</button>
+                        <button id="absorbAttack" class="battleBlockButtons" style="top: 6.4vw; left: 25vw;">Absorb</button>
+                        <div id="lowResources2" class="warning">Not Enough Resources</div>
+                    </div>
+                </div>
+                <div class="infoPage" id="colorInfo">
+                    <h1>Types</h1>
+                    <div class="infoBlock" id="greenBlock" style="top: 5vw; background-color: green;"></div>        
+                    <div class="infoBlock" id="redBlock" style="top: 10vw; background-color: red;"></div>
+                    <div class="infoBlock" id="indigoBlock" style="top: 15vw; background-color: indigo;"></div>
+                    <div class="infoBlock" id="orangeBlock" style="top: 20vw; background-color: orange;"></div>
+                    <div class="infoBlock" id="blueBlock" style="top: 25vw; background-color: blue;"></div>
+                    <div class="infoBlock" id="violetBlock" style="top: 30vw; background-color: violet;"></div>
+                    <div class="infoBlock" id="yellowBlock" style="top: 35vw; background-color: yellow;"></div>
+                    <div class="infoRight" id="greenInfo" style="top: 5.5vw;">Attack: restore 1 health</div>
+                    <div class="infoRight" id="redInfo" style="top: 10.5vw;">Attack: deal 2 damage</div>
+                    <div class="infoRight" id="indigoInfo" style="top: 15.5vw;">Attack: increase resource drop by 0.5%</div>
+                    <div class="infoRight" id="orangeInfo" style="top: 20.5vw;">Attack: all adjacent enemies take 1 damage</div>
+                    <div class="infoRight" id="blueInfo" style="top: 25.5vw;">Attack: costs no energy</div>
+                    <div class="infoRight" id="violetInfo" style="top: 30.5vw;">Attack: reduce enemy damage by 1</div>
+                    <div class="infoRight" id="yellowInfo" style="top: 35.5vw;">Attack: 30% chance to earn a trophy</div>
+                    <div class="clickToCont">click anywhere to continue</div>
+                </div>
+                <div class="infoPage" id="cardInfo">
+                    <h1>Cards</h1>
+                    <div class="cardBlock" id="orangeCard" style="top: 5vw; left: 3vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="greenCard" style="top: 5vw; left: 4.5vw; background-color: green;"></div>
+                    <div class="cardBlock" id="indigoCard" style="top: 8vw; left: 3vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 8vw; left: 4.5vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 11vw; left: 3vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="yellowCard" style="top: 11vw; left: 4.5vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 14vw; left: 3vw; background-color: red;"></div>
+                    <div class="cardBlock" id="orangeCard" style="top: 14vw; left: 4.5vw; background-color: green;"></div>
+                    <div class="cardBlock" id="yellowCard" style="top: 17vw; left: 3vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="indigoCard" style="top: 17vw; left: 4.5vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 20vw; left: 3vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 20vw; left: 4.5vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 20vw; left: 6vw; background-color: red;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 23vw; left: 3vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 23vw; left: 4.5vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 23vw; left: 6vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 26vw; left: 3vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 26vw; left: 4.5vw; background-color: green;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 26vw; left: 6vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 26vw; left: 7.5vw; background-color: red;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 29vw; left: 3vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 29vw; left: 4.5vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 29vw; left: 6vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 29vw; left: 7.5vw; background-color: red;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 29vw; left: 9vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 32vw; left: 3vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 32vw; left: 4.5vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 32vw; left: 6vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 32vw; left: 7.5vw; background-color: green;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 32vw; left: 9vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 35vw; left: 3vw; background-color: red;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 35vw; left: 4.5vw; background-color: red;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 35vw; left: 6vw; background-color: red;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 35vw; left: 7.5vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 35vw; left: 9vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 35vw; left: 10.5vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 38vw; left: 3vw; background-color: red;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 38vw; left: 4.5vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 38vw; left: 6vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 38vw; left: 7.5vw; background-color: green;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 38vw; left: 9vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 38vw; left: 10.5vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 38vw; left: 12vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 5vw; left: 23vw; background-color: red;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 5vw; left: 24.5vw; background-color: red;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 5vw; left: 26vw; background-color: red;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 5vw; left: 27.5vw; background-color: red;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 8vw; left: 23vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 8vw; left: 24.5vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 8vw; left: 26vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 8vw; left: 27.5vw; background-color: orange;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 11vw; left: 23vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 11vw; left: 24.5vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 11vw; left: 26vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 11vw; left: 27.5vw; background-color: yellow;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 14vw; left: 23vw; background-color: green;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 14vw; left: 24.5vw; background-color: green;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 14vw; left: 26vw; background-color: green;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 14vw; left: 27.5vw; background-color: green;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 17vw; left: 23vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 17vw; left: 24.5vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 17vw; left: 26vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 17vw; left: 27.5vw; background-color: blue;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 20vw; left: 23vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 20vw; left: 24.5vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 20vw; left: 26vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 20vw; left: 27.5vw; background-color: indigo;"></div>
+                    <div class="cardBlock" id="violetCard" style="top: 23vw; left: 23vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="blueCard" style="top: 23vw; left: 24.5vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 23vw; left: 26vw; background-color: violet;"></div>
+                    <div class="cardBlock" id="redCard" style="top: 23vw; left: 27.5vw; background-color: violet;"></div>
+                    <div class="blockRight" style="top: 5.3vw; left: 7vw;">2 free blocks against any type</div>
+                    <div class="blockRight" style="top: 8.3vw; left: 7vw;">Draw 4 free cards</div>
+                    <div class="blockRight" style="top: 11.3vw; left: 7vw">Increase resource spawn chance by 1%</div>
+                    <div class="blockRight" style="top: 14.3vw; left: 7vw;">Next attack deals 5% of your health</div>
+                    <div class="blockRight" style="top: 17.3vw; left: 7vw;">Increase trophy gain on yellow attack by 1%</div>
+                    <div class="blockRight" style="top: 20.3vw; left: 8.5vw;">Reduce enemy spawn chance by 0.3%</div>
+                    <div class="blockRight" style="top: 23.3vw; left: 8.5vw;">Deal 2 damage to all enemies*</div>
+                    <div class="blockRight" style="top: 26.3vw; left: 10vw;">Trophies are doubled for rest of level but deal 5 damage</div>
+                    <div class="blockRight" style="top: 29.3vw; left: 11.5vw;">Target and kill an enemy</div>
+                    <div class="blockRight" style="top: 32.3vw; left: 11.5vw;">Main color attacks deal (1% energy) more damage, stacking</div>
+                    <div class="blockRight" style="top: 35.3vw; left: 13vw;">All attacks deal +1 damage to targeted enemy</div>
+                    <div class="blockRight" style="top: 38.3vw; left: 14.5vw;">Acquire all colors on board and the trophy</div>
+                    <div class="blockRight" style="top: 5.3vw; left: 30vw;">Deal 12 damage to selected enemy</div>
+                    <div class="blockRight" style="top: 8.3vw; left: 30vw;">Deal 7 damage to adjacent enemies</div>
+                    <div class="blockRight" style="top: 11.3vw; left: 30vw;">Gain 3 trophies</div>
+                    <div class="blockRight" style="top: 14.3vw; left: 30vw;">Restore 50% of missing health</div>
+                    <div class="blockRight" style="top: 17.3vw; left: 30vw;">Restore 75% of missing energy</div>
+                    <div class="blockRight" style="top: 20.3vw; left: 30vw;">Enemies can be blocked by any color*</div>
+                    <div class="blockRight" style="top: 23.3vw; left: 30vw;">Enemies stand still for next 10 moves*</div>
+                    <div class="blockRight" id="conditional" style="left: 14vw; top: 41vw;">*Only applies to enemies currently on the board</div>
+                    <div class="clickToCont">click anywhere to continue</div>
+                </div>
+                <div class="infoPage" id="controlInfo">
+                    <h1>Rules</h1>
+                    <ul>
+                        <li>Collect all trophies to pass level, pass all levels to win game</li>
+                        <li>Move with WASD, click buttons</li>
+                        <li>Lose when health reaches 0</li>
+                        <li>Draw types (colors) using "Draw" or by collecting them in arena</li>
+                        <li>Use types to attack, block, and cast abilities (attacks and abilities cost 1 energy)</li>
+                        <li>When you bump into enemies you can attack them and they can attack you</li>
+                        <li>You can attack enemies with any type except their own (e.g. red enemies cannot be attacked with red)</li>
+                        <li>Different types have different effects when you attack with them</li>
+                        <li>You can block an attack with the same type (e.g. a blue enemy can be blocked with blue)</li>
+                        <li>If you don't block you take damage</li>
+                        <li>Abilities can be cast when you have the necessary color schemes, read descriptions</li>
+                        <li>You have a limited number of draws that increases every 4 moves (draws also cost 1 energy)</li>
+                        <li>If you move 12 consecutive times without collecting a trophy you will start taking damage</li>
+                        <li>Types have a 7% chance of spawning on the arena with each move</li>
+                        <li>Guard enemies stand still and spawn at the beginning of each level</li>
+                        <li>Chaser enemies move toward the main player with each move</li>
+                        <li>Chaser enemies have a ???% chance of spawning on the arena with each move</li>
+                        <li>Enemies get tougher and more unique with each level</li>
+                        <li>When you collect a trophy the next trophy will spawn at another place on the arena</li>
+                        <li>"Storm" destroys all enemies on arena but costs 10 * (current level) health and energy</li>
+                        <li>"Cast" allows you to cast an ability after clicking it</li>
+                        <li>When you reach 0 energy you can't really do much</li>
+                    </ul>
+                    <div class="clickToCont">click anywhere to continue</div>
+                </div>
             </div>
         </div>
     </body>
