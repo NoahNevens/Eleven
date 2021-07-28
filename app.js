@@ -7,26 +7,38 @@ const LEV1HPDAM = [1.0, 0.2, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV1ENERGY = [1.0, 0.2, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV1PURSUE = 0.99;
 const LEV2HPDAM = [1.0, 0.6, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const LEV2ENERGY = [1.0, 0.23, 0.07, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV2ENERGY = [1.0, 0.24, 0.08, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV2PURSUE = 0.92;
 const LEV3HPDAM = [1.0, 0.9, 0.6, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const LEV3ENERGY = [1.0, 0.26, 0.09, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV3ENERGY = [1.0, 0.28, 0.11, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV3PURSUE = 0.85;
 const LEV4HPDAM = [1.0, 0.95, 0.75, 0.45, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0];
-const LEV4ENERGY = [1.0, 0.29, 0.11, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV4ENERGY = [1.0, 0.32, 0.14, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV4PURSUE = 0.78;
 const LEV5HPDAM = [1.0, 0.99, 0.95, 0.75, 0.4, 0.15, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0];
-const LEV5ENERGY = [1.0, 0.32, 0.13, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV5ENERGY = [1.0, 0.36, 0.17, 0.02, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV5PURSUE = 0.71;
 const LEV6HPDAM = [1.0, 0.999, 0.99, 0.95, 0.75, 0.37, 0.12, 0.05, 0.001, 0, 0, 0, 0, 0, 0];
-const LEV6ENERGY = [1.0, 0.35, 0.15, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV6ENERGY = [1.0, 0.4, 0.2, 0.03, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV6PURSUE = 0.64;
 const LEV7HPDAM = [1.0, 1.0, 0.999, 0.99, 0.95, 0.6, 0.45, 0.2, 0.12, 0.05, 0.001, 0, 0, 0, 0];
-const LEV7ENERGY = [1.0, 0.38, 0.17, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV7ENERGY = [1.0, 0.44, 0.23, 0.04, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const LEV7PURSUE = 0.57;
-const HPDAM = [LEVEL0, LEV1HPDAM, LEV2HPDAM, LEV3HPDAM, LEV4HPDAM, LEV5HPDAM, LEV6HPDAM, LEV7HPDAM];
-const ENERGY = [LEVEL0, LEV1ENERGY, LEV2ENERGY, LEV3ENERGY, LEV4ENERGY, LEV5ENERGY, LEV6ENERGY, LEV7ENERGY];
-const PURSUE = [LEVEL0, LEV1PURSUE, LEV2PURSUE, LEV3PURSUE, LEV4PURSUE, LEV5PURSUE, LEV6PURSUE, LEV7PURSUE];
+const LEV8HPDAM = [1.0, 1.0, 0.999, 0.999, 0.99, 0.95, 0.6, 0.45, 0.2, 0.12, 0.05, 0.001, 0, 0, 0];
+const LEV8ENERGY = [1.0, 0.48, 0.26, 0.05, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV8PURSUE = 0.5;
+const LEV9HPDAM = [1.0, 1.0, 1.0, 0.999, 0.999, 0.99, 0.95, 0.6, 0.45, 0.2, 0.12, 0.05, 0.001, 0, 0];
+const LEV9ENERGY = [1.0, 0.52, 0.29, 0.06, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV9PURSUE = 0.43;
+const LEV10HPDAM = [1.0, 1.0, 1.0, 1.0, 0.999, 0.999, 0.99, 0.95, 0.6, 0.45, 0.2, 0.12, 0.05, 0.001, 0];
+const LEV10ENERGY = [1.0, 0.56, 0.32, 0.07, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV10PURSUE = 0.36;
+const LEV11HPDAM = [1.0, 1.0, 1.0, 1.0, 1.0, 0.999, 0.999, 0.99, 0.95, 0.6, 0.45, 0.2, 0.12, 0.05, 0.001];
+const LEV11ENERGY = [1.0, 0.6, 0.35, 0.08, 0.001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const LEV11PURSUE = 0.29;
+const HPDAM = [LEVEL0, LEV1HPDAM, LEV2HPDAM, LEV3HPDAM, LEV4HPDAM, LEV5HPDAM, LEV6HPDAM, LEV7HPDAM, LEV8HPDAM, LEV9HPDAM, LEV10HPDAM, LEV11HPDAM];
+const ENERGY = [LEVEL0, LEV1ENERGY, LEV2ENERGY, LEV3ENERGY, LEV4ENERGY, LEV5ENERGY, LEV6ENERGY, LEV7ENERGY, LEV8ENERGY, LEV9ENERGY, LEV10ENERGY, LEV11ENERGY];
+const PURSUE = [LEVEL0, LEV1PURSUE, LEV2PURSUE, LEV3PURSUE, LEV4PURSUE, LEV5PURSUE, LEV6PURSUE, LEV7PURSUE, LEV8PURSUE, LEV9PURSUE, LEV10PURSUE, LEV11PURSUE];
 
 let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 var color_toggle = false;
@@ -41,7 +53,7 @@ var player_pos = [5, 0];
 var prev_player_pos = [100, 100];
 var troph_pos = [5, 10];
 var trophies = 0;
-var resource_thresh = 0.93;
+var resource_thresh = 0.95;
 var enemy_thresh = 0.88;
 var move_count = 0;
 var valid_move = false;
@@ -54,9 +66,17 @@ var curr_level = 1;
 var attack_turn = false;
 var defense_turn = false;
 var resources_warning = false;
+var resources_warning2 = false;
 var energy_warning = false;
+var inspirit_toggle = false;
+var regen_toggle = false;
+var invest_toggle = false;
+var battle_cry_toggle = false;
+var ability_toggles = [inspirit_toggle, regen_toggle, invest_toggle, battle_cry_toggle];
+var ability_opacities = ["#restoreEnergy", "#restoreHealth", "#increaseYellow", "#moreDamage"];
 var curr_enemy;
 var trophy_timer = 25;
+var red_damage = 1;
 
 var reds = 0;
 var oranges = 0;
@@ -130,6 +150,12 @@ $(".overlay").on("click", function(event) {
 
 $("#draw").on("click", function(event) {
     event.preventDefault();
+    if (!time_out) {
+        draw();
+    }
+})
+
+function draw() {
     if (energy > 0 && draw_count > 0) {
         shuffleArray(colors);
         $("#cardHolder").css("background-color", colors[0]);
@@ -139,8 +165,8 @@ $("#draw").on("click", function(event) {
         draw_count--;
         $("#drawInfo").text("Draws: " + draw_count);
     }
-})
-
+}
+ 
 $("#storm").on("click", function(event) {
     event.preventDefault();
     health -= 20;
@@ -153,6 +179,31 @@ document.onkeydown = function(event) {
     if (!time_out) {
         if (move_scheme.includes(event.code)) {
             movePlayer(event.code);
+        } else if (event.code === "KeyQ") {
+            draw();
+        } else if (event.code === "KeyZ") {
+            abilityToggle(1);
+        } else if (event.code === "KeyX") {
+            abilityToggle(0);
+        } else if (event.code === "KeyC") {
+            abilityToggle(2);
+        } else if (event.code === "KeyV") {
+            abilityToggle(3);
+        } else if (event.code === "KeyE") {
+            abilityCast();
+        }
+    } else if (attack_turn) {
+        if (event.code === "KeyR") {
+            commitAttack();
+        } else if (event.code === "KeyT") {
+            changeToDefense();
+        }
+    } else if (defense_turn) {
+        if (event.code === "KeyF") {
+            console.log(defense_turn);
+            commitBlock();
+        } else if (event.code === "KeyG") {
+            absorbAttack();
         }
     }
 }
@@ -583,24 +634,28 @@ $(".defenseChoices").on("click", function(event) {
 $("#commitAttack").on("click", function(event) {
     event.preventDefault();
     if (attack_turn) {
-        for (var i = 0; i < type_toggle.length; i++) {
-            if (type_toggle[i]) {
-                if (type_counts[i] > 0 && energy > 0) {
-                    updatePalette(TYPES[i], -1);
-                    type_toggle[i] = false;
-                    engage(TYPES[i]);
-                    changeToDefense();
-                } else if (energy < 1 && !energy_warning) {
-                    energy_warning = true;
-                    $("#lowEnergy").toggle();
-                } else if (type_counts[i] < 1 && !resources_warning) {
-                    resources_warning = true;
-                    $("#lowResources").toggle();
-                }
+        commitAttack();
+    }
+})
+
+function commitAttack() {
+    for (var i = 0; i < type_toggle.length; i++) {
+        if (type_toggle[i]) {
+            if (type_counts[i] > 0 && energy > 0) {
+                updatePalette(TYPES[i], -1);
+                type_toggle[i] = false;
+                engage(TYPES[i]);
+                changeToDefense();
+            } else if (energy < 1 && !energy_warning) {
+                energy_warning = true;
+                $("#lowEnergy").toggle();
+            } else if (type_counts[i] < 1 && !resources_warning) {
+                resources_warning = true;
+                $("#lowResources").toggle();
             }
         }
     }
-})
+}
 
 $("#passAttack").on("click", function(event) {
     event.preventDefault();
@@ -627,35 +682,43 @@ function changeToDefense() {
 $("#commitBlock").on("click", function(event) {
     event.preventDefault();
     if (defense_turn) {
-        for (var i = 0; i < type_toggle.length; i++) {
-            if (type_toggle[i]) {
-                if (type_counts[i] > 0) {
-                    updatePalette(TYPES[i], -1);
-                    type_toggle[i] = false;
-                    curr_enemy.energy--;
-                    $("#enemyEnergy").text("Energy: " + curr_enemy.energy);
-                    checkEnemy();
-                    changeToAttack();
-                } else if (!resources_warning) {
-                    resources_warning = true;
-                    $("#lowResources2").toggle();
-                }
+        commitBlock();
+    }
+})
+
+function commitBlock() {
+    for (var i = 0; i < type_toggle.length; i++) {
+        if (type_toggle[i]) {
+            if (type_counts[i] > 0) {
+                updatePalette(TYPES[i], -1);
+                type_toggle[i] = false;
+                curr_enemy.energy--;
+                $("#enemyEnergy").text("Energy: " + curr_enemy.energy);
+                checkEnemy();
+                changeToAttack();
+            } else if (!resources_warning2) {
+                resources_warning2 = true;
+                $("#lowResources2").toggle();
             }
         }
     }
-})
+}
 
 $("#absorbAttack").on("click", function(event) {
     event.preventDefault();
     if (defense_turn) {
-        health -= curr_enemy.damage;
-        updateHealth();
-        curr_enemy.energy--;
-        $("#enemyEnergy").text("Energy: " + curr_enemy.energy);
-        checkEnemy();
-        changeToAttack();
+        absorbAttack();
     }
 })
+
+function absorbAttack() {
+    health -= curr_enemy.damage;
+    updateHealth();
+    curr_enemy.energy--;
+    $("#enemyEnergy").text("Energy: " + curr_enemy.energy);
+    checkEnemy();
+    changeToAttack();
+}
 
 function changeToAttack() {
     $("#attackBlock").css("opacity", 1.0);
@@ -665,13 +728,19 @@ function changeToAttack() {
     if (resources_warning) {
         $("#lowResources").toggle();
         resources_warning = false;
-    } 
+    } else if (resources_warning2) {
+        $("#lowResources2").toggle();
+        resources_warning2 = false;
+    } else if (energy_warning) {
+        $("#lowEnergy").toggle();
+        energy_warning = false;
+    }
     $(".defenseChoices").css("opacity", 0.5);
 }
 
 function engage(type) {
     if (type === "red") {
-        curr_enemy.health--;
+        curr_enemy.health -= red_damage;
     } else if (type === "orange") {
         var enemy_length = enemy_list.length;
         for (var i = 0; i < ADJACENT.length; i++) {
@@ -733,6 +802,10 @@ function checkEnemy() {
         attack_turn = false;
         defense_turn = false;
         $(".attackChoices, .defenseChoices").css("opacity", 0.5);
+        if (resources_warning2) {
+            resources_warning2 = false;
+            $("#lowResources2").toggle();
+        }
     }
 }
 
@@ -825,4 +898,55 @@ function updateTrophies() {
         }
     }
     newTrophy(troph_pos);
+}
+
+$(".card").on("click", function(event) {
+    event.preventDefault();
+    var index = $(".card").index(this);
+    abilityToggle(index);
+})
+
+function abilityToggle(index) {
+    for (var i = 0; i < ability_toggles.length; i++) {
+        if (i === index && !ability_toggles[i]) {
+            ability_toggles[i] = true;
+            console.log(ability_toggles);
+            $(ability_opacities[i]).css("background-color", "rgb(60, 60, 60)");
+        } else if (i === index && ability_toggles[i]) {
+            ability_toggles[i] = false;
+            $(ability_opacities[i]).css("background-color", "rgb(100, 100, 100)");
+        } else {
+            ability_toggles[i] = false;
+            $(ability_opacities[i]).css("background-color", "rgb(100, 100, 100)");
+        }
+    }
+}
+
+$("#save").on("click", function(event) {
+    event.preventDefault();
+    abilityCast();
+})
+
+function abilityCast() {
+    if (ability_toggles[0]) {
+        var missing_energy = Math.floor(((100 - energy) / 4) * 3);
+        energy += missing_energy;
+        updateEnergy(); 
+        ability_toggles[0] = false;
+        $(ability_opacities[0]).css("background-color", "rgb(100, 100, 100)");
+    } else if (ability_toggles[1]) {
+        var missing_health = Math.floor((100 - health) / 2);
+        health += missing_health;
+        updateHealth(); 
+        ability_toggles[1] = false;
+        $(ability_opacities[1]).css("background-color", "rgb(100, 100, 100)");
+    } else if (ability_toggles[2]) {
+        yellow_chance--;
+        ability_toggles[2] = false;
+        $(ability_opacities[2]).css("background-color", "rgb(100, 100, 100)");
+    } else if (ability_toggles[3]) {
+        red_damage++;
+        ability_toggles[3] = false;
+        $(ability_opacities[3]).css("background-color", "rgb(100, 100, 100)");
+    }
 }
