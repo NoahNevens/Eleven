@@ -319,6 +319,12 @@ function updateHealth() {
     } else {
     $("#health").css("background", "linear-gradient(to right, rgb(224, 129, 129) " + health + "%, rgb(136, 136, 136) " + (100 - health) + "%");
     }
+
+    if (health < 1) {
+        time_out = true;
+        $(".overlay").toggle();
+        $("#lose").toggle();
+    }
 }
 
 function coordEquality(coord1, coord2) {
@@ -887,6 +893,11 @@ function enemyPursuit(enemy) {
 function updateTrophies() {
     $("#trophyInfo").text("Trophies: " + trophies + " / 11");
     if (trophies === 11) {
+        if (curr_level === 11) {
+            time_out = true;
+            $(".overlay").toggle();
+            $("#win").toggle();
+        }
         trophies = 0;
         $("#trophyInfo").text("Trophies: " + trophies + " / 11");
         curr_level++
@@ -910,7 +921,6 @@ function abilityToggle(index) {
     for (var i = 0; i < ability_toggles.length; i++) {
         if (i === index && !ability_toggles[i]) {
             ability_toggles[i] = true;
-            console.log(ability_toggles);
             $(ability_opacities[i]).css("background-color", "rgb(60, 60, 60)");
         } else if (i === index && ability_toggles[i]) {
             ability_toggles[i] = false;
@@ -929,24 +939,60 @@ $("#save").on("click", function(event) {
 
 function abilityCast() {
     if (ability_toggles[0]) {
-        var missing_energy = Math.floor(((100 - energy) / 4) * 3);
-        energy += missing_energy;
-        updateEnergy(); 
+        if (abilityValid(10)) {
+            var missing_energy = Math.floor(((100 - energy) / 4) * 3);
+            energy += missing_energy;
+            updateEnergy(); 
+            randomResourceUse(10);
+            $("#energyNotif").fadeIn(100).fadeOut(100);
+        }
         ability_toggles[0] = false;
         $(ability_opacities[0]).css("background-color", "rgb(100, 100, 100)");
     } else if (ability_toggles[1]) {
-        var missing_health = Math.floor((100 - health) / 2);
-        health += missing_health;
-        updateHealth(); 
+        if (abilityValid(10)) {
+            var missing_health = Math.floor((100 - health) / 2);
+            health += missing_health;
+            updateHealth(); 
+            randomResourceUse(10);
+            $("#healthNotif").fadeIn(100).fadeOut(100);
+        }
         ability_toggles[1] = false;
         $(ability_opacities[1]).css("background-color", "rgb(100, 100, 100)");
     } else if (ability_toggles[2]) {
-        yellow_chance--;
+        if (abilityValid(2)) {
+            yellow_chance--;
+            randomResourceUse(2);
+            $("#yellowNotif").fadeIn(500).fadeOut(500);
+        }
         ability_toggles[2] = false;
         $(ability_opacities[2]).css("background-color", "rgb(100, 100, 100)");
     } else if (ability_toggles[3]) {
-        red_damage++;
+        if (abilityValid(12)) {
+            red_damage++;
+            randomResourceUse(12);
+            $("#redNotif").fadeIn(100).fadeOut(100);
+        }
         ability_toggles[3] = false;
         $(ability_opacities[3]).css("background-color", "rgb(100, 100, 100)");
     }
+}
+
+function abilityValid(cost) {
+    for (var i = 0; i < type_counts.length; i++) {
+        if (type_counts[i] === cost || type_counts[i] > cost) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function randomResourceUse(cost) {
+    var valid_types = []
+    for (var i = 0; i < type_counts.length; i++) {
+        if (type_counts[i] === cost || type_counts[i] > cost) {
+            valid_types.push(TYPES[i]);
+        }
+    }
+    var rand = Math.floor(Math.random() * valid_types.length);
+    updatePalette(valid_types[rand], -cost);
 }
