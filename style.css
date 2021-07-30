@@ -651,3 +651,31 @@ button:hover {
     background-color: rgb(145, 144, 144);
     right: 0.5vw;
 }
+
+.endGame {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    left: 30vw;
+    font-size: 10vw;
+    top: 20vw;
+}
+
+#win {
+    color: green;
+}
+
+#lose {
+    color: red;
+    background-color: rgb(155, 207, 144)
+}
+
+.abilityNotif {
+    display: none;
+    position: absolute;
+    left: 77vw;
+    top: 25vw;
+    font-size: 2vw;
+    z-index: 5;
+}
+
